@@ -1,1 +1,208 @@
-AC King website setup
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111820">
+  <meta name="description" content="AC King — air-conditioning parts, compressors and services. Contact us for product availability, compatibility and service enquiries.">
+  <title>AC King | Air Conditioning Parts & Services</title>
+  <style>
+    :root{--ink:#111820;--ink2:#1c2732;--orange:#f5a623;--cream:#f7f8fa;--muted:#65717d;--line:#e3e7eb;--white:#fff;--green:#168653}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1120px,92%);margin:auto}
+    .topbar{background:#0b1117;color:#d8dee5;font-size:.84rem;padding:8px 0}
+    .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{position:sticky;top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid var(--line)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .mark{width:46px;height:46px;border-radius:12px;background:var(--orange);display:grid;place-items:center;color:var(--ink);font-size:1.55rem;font-weight:900}
+    .brand-name{font-size:1.35rem;font-weight:900;letter-spacing:.07em;line-height:1.1}
+    .brand-sub{font-size:.67rem;letter-spacing:.11em;font-weight:700;color:var(--muted);margin-top:5px}
+    nav{display:flex;align-items:center;gap:24px}
+    nav a{text-decoration:none;font-size:.93rem;font-weight:700}
+    nav a:hover{color:#b66e00}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:9px;text-decoration:none;font-weight:800;border:2px solid transparent;transition:.2s;cursor:pointer}
+    .btn-orange{background:var(--orange);color:#141a20}
+    .btn-orange:hover{background:#ffc04d;transform:translateY(-1px)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-outline{border-color:#cbd2d9;color:var(--ink);background:#fff}
+    .menu-toggle{display:none;background:none;border:0;font-size:1.7rem}
+    .hero{background:linear-gradient(110deg,#111820 0%,#172432 58%,#263746 100%);color:white;overflow:hidden;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:42px;padding:76px 0 80px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--orange);font-weight:900;letter-spacing:.14em;font-size:.78rem;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:3px;background:var(--orange)}
+    h1{font-size:clamp(2.6rem,5.3vw,4.7rem);line-height:1.02;letter-spacing:-.045em;margin:18px 0}
+    h1 span{color:var(--orange)}
+    .hero p{font-size:1.08rem;color:#d5dde5;max-width:540px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero .btn-outline{background:transparent;color:white;border-color:#657482}
+    .hero-art{position:relative;min-height:350px;display:grid;place-items:center}
+    .hero-art:before{content:"";position:absolute;width:min(370px,85%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#394b59 0%,#243443 58%,transparent 70%)}
+    .hero-art img{position:relative;width:100%;max-width:490px;max-height:390px;object-fit:contain;filter:drop-shadow(0 22px 30px rgba(0,0,0,.35));border-radius:16px}
+    .hero-note{position:absolute;bottom:22px;left:0;background:#fff;color:var(--ink);padding:13px 17px;border-radius:10px;box-shadow:0 12px 35px #0004;font-weight:800}
+    .hero-note small{display:block;color:var(--muted);font-weight:600}
+    .trust{background:var(--orange);padding:15px 0}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center;font-weight:900}
+    .trust span{font-size:.9rem}
+    section{padding:78px 0}
+    .section-head{max-width:690px;margin:0 auto 36px;text-align:center}
+    .section-head h2{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.035em;line-height:1.12;margin:12px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:.22s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 35px #17243212}
+    .card-img{height:210px;background:#edf1f4;display:grid;place-items:center;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover}
+    .card-content{padding:23px}
+    .card h3{margin:0 0 8px;font-size:1.25rem}
+    .card p{margin:0 0 18px;color:var(--muted);font-size:.95rem}
+    .text-link{font-weight:900;text-decoration:none;color:#a45f00}
+    .services{background:var(--cream)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service{padding:27px;border-radius:15px;background:#fff;border:1px solid var(--line)}
+    .service-icon{width:51px;height:51px;background:#fff0d2;color:#9d5c00;border-radius:13px;display:grid;place-items:center;font-size:1.5rem}
+    .service h3{margin:16px 0 7px}
+    .service p{margin:0;color:var(--muted)}
+    .banner{background:var(--ink);color:white;border-radius:20px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .banner h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;margin:0 0 10px}
+    .banner p{color:#cbd4dc;margin:0}
+    .banner-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .step{border-top:3px solid var(--orange);padding:20px 8px}
+    .step b{font-size:1.05rem}
+    .step p{color:var(--muted);margin:7px 0 0}
+    .contact{background:#f7f8fa}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:start}
+    .contact-info h2{font-size:2.5rem;line-height:1.1;margin:12px 0}
+    .contact-info p{color:var(--muted)}
+    .contact-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+    .contact-row{display:flex;gap:14px;margin:18px 0}
+    .contact-icon{width:42px;height:42px;border-radius:11px;background:#fff0d2;display:grid;place-items:center;flex-shrink:0}
+    .contact-row b{display:block}
+    .contact-row span{font-size:.94rem;color:var(--muted)}
+    .placeholder-note{background:#fff8e8;border:1px solid #f1d9a9;padding:13px;border-radius:9px;color:#68460a;font-size:.9rem}
+    footer{background:#0b1117;color:#cbd4dc;padding:30px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .footer-brand{color:#fff;font-weight:900;letter-spacing:.08em}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-links a{color:#cbd4dc;text-decoration:none;font-size:.9rem}
+    .copyright{font-size:.82rem;color:#8d9aa6;margin-top:18px}
+    .wa-float{position:fixed;right:19px;bottom:19px;background:#1a9c61;color:#fff;border-radius:999px;padding:14px 18px;text-decoration:none;font-weight:900;box-shadow:0 8px 25px #0003;z-index:20}
+    @media(max-width:800px){
+      .nav{min-height:68px}nav{display:none;position:absolute;left:0;right:0;top:68px;background:#fff;padding:20px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:17px}nav.open{display:flex}.menu-toggle{display:block}.nav-cta{display:none}
+      .hero-grid{grid-template-columns:1fr;padding:54px 0 46px;gap:12px}.hero-art{min-height:260px}.hero-art img{max-height:300px}.hero-note{bottom:0}
+      .trust-grid{grid-template-columns:1fr;gap:6px}
+      section{padding:58px 0}.cards,.service-grid{grid-template-columns:1fr}.card-img{height:230px}
+      .banner{padding:29px;display:block}.banner-actions{margin-top:22px}
+      .steps{grid-template-columns:1fr;gap:5px}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>AC KING · AIR CONDITIONING PARTS & SERVICES</span><span>Serving individuals, mechanics & businesses</span></div></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="AC King home"><span class="mark">♛</span><span><span class="brand-name">AC KING</span><span class="brand-sub">PARTS & SERVICES</span></span></a>
+      <nav id="nav">
+        <a href="#home">Home</a><a href="#products">Parts</a><a href="#services">Services</a><a href="#about">Why AC King</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-orange nav-cta" href="#contact">Enquire Today ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Parts you need. Service you can ask about.</div>
+          <h1>Your AC Parts &amp; Service <span>Experts.</span></h1>
+          <p>Looking for air-conditioning parts, compressors or service support? Get in touch with AC King to enquire about availability, compatibility and the right solution for your needs.</p>
+          <div class="hero-actions"><a class="btn btn-orange wa-link" href="#contact">Enquire on WhatsApp ↗</a><a class="btn btn-outline" href="#products">Explore Parts ↓</a></div>
+        </div>
+        <div class="hero-art">
+          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1000&q=85" alt="Technician working with equipment" onerror="this.style.display='none'">
+          <div class="hero-note">AC KING<small>Parts · Compressors · Services</small></div>
+        </div>
+      </div>
+    </section>
+    <div class="trust"><div class="wrap trust-grid"><span>✓ Enquiries for Individuals</span><span>✓ Support for Garages & Businesses</span><span>✓ Contact Us to Check Availability</span></div></div>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Browse our range</div><h2>Parts &amp; Products</h2><p>Ask us about the parts you need. Availability, fitment and pricing can be confirmed directly with AC King.</p></div>
+        <div class="cards">
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1635784063381-6b3f4b6a3e5f?auto=format&fit=crop&w=800&q=80" alt="Air conditioning compressor" onerror="this.src='https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80'"></div><div class="card-content"><h3>AC Compressors</h3><p>Enquire about compressor options and confirm the correct fit for your vehicle or system.</p><a class="text-link wa-link" href="#contact" data-message="Hi AC King, I would like to enquire about AC compressors.">Ask about compressors →</a></div></article>
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="Technical equipment and parts" onerror="this.style.display='none'"></div><div class="card-content"><h3>Air Conditioning Parts</h3><p>Tell us the part name, part number or system details so we can help with your enquiry.</p><a class="text-link wa-link" href="#contact" data-message="Hi AC King, I need help finding an air-conditioning part.">Enquire about parts →</a></div></article>
+          <article class="card"><div class="card-img"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Technician working on equipment" onerror="this.style.display='none'"></div><div class="card-content"><h3>Product Requests</h3><p>Looking for something specific? Send us the details and ask about availability and pricing.</p><a class="text-link wa-link" href="#contact" data-message="Hi AC King, I would like to enquire about a specific product.">Request a product →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">How we can help</div><h2>AC Services</h2><p>Contact AC King to find out which services are available for your needs.</p></div>
+        <div class="service-grid">
+          <article class="service"><div class="service-icon">⚙</div><h3>Parts Assistance</h3><p>Share your system details or part number to help us understand what you're looking for.</p></article>
+          <article class="service"><div class="service-icon">❄</div><h3>Air Conditioning Enquiries</h3><p>Ask about the AC service or support you need and we'll guide your enquiry to the right place.</p></article>
+          <article class="service"><div class="service-icon">▣</div><h3>Business & Bulk Enquiries</h3><p>Garages and businesses can contact us about product needs, quantities and pricing.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="banner"><div><h2>Need a part? Let's talk.</h2><p>Tell us what you're looking for and enquire directly with AC King.</p></div><div class="banner-actions"><a class="btn btn-orange wa-link" href="#contact" data-message="Hi AC King, I have a product or service enquiry.">Contact AC King ↗</a><a class="btn btn-outline" href="#contact">Contact details</a></div></div>
+        <div class="section-head" style="margin-top:64px;margin-bottom:28px"><div class="eyebrow">Why contact AC King?</div><h2>Clear information. Direct enquiries.</h2><p>We want customers to be able to ask questions, confirm details and make informed choices before ordering.</p></div>
+        <div class="steps"><div class="step"><b>01 · Tell us what you need</b><p>Share a photo, part number, vehicle details or the service you're enquiring about.</p></div><div class="step"><b>02 · Confirm the details</b><p>Check availability, compatibility, pricing and any other important details before purchasing.</p></div><div class="step"><b>03 · Arrange next steps</b><p>Discuss ordering, collection, delivery or service arrangements directly with AC King.</p></div></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-info"><div class="eyebrow">Get in touch</div><h2>Contact AC King</h2><p>Have a question about a compressor, AC part or service? Send us an enquiry. We'll add the correct contact details here before the site goes public.</p><div class="placeholder-note"><b>Website setup note:</b> The phone number, email, location and opening hours have not been provided yet. Replace the placeholders before publishing.</div></div>
+        <div class="contact-box">
+          <div class="contact-row"><div class="contact-icon">💬</div><div><b>WhatsApp enquiries</b><span>Add AC King's WhatsApp number to activate the enquiry buttons.</span></div></div>
+          <div class="contact-row"><div class="contact-icon">☎</div><div><b>Telephone</b><span>Phone number to be added</span></div></div>
+          <div class="contact-row"><div class="contact-icon">⌖</div><div><b>Location</b><span>Business address or service area to be added</span></div></div>
+          <div class="contact-row"><div class="contact-icon">◷</div><div><b>Opening hours</b><span>Hours to be confirmed</span></div></div>
+          <a class="btn btn-dark" href="mailto:">Email AC King (add email first)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><div class="footer-row"><div><div class="footer-brand">AC KING</div><div>Air Conditioning Parts &amp; Services</div></div><div class="footer-links"><a href="#products">Parts</a><a href="#services">Services</a><a href="#contact">Contact</a></div></div><div class="copyright">© <span id="year"></span> AC King. All rights reserved. Product images are illustrative; replace with authentic business photos before launch.</div></div></footer>
+  <a class="wa-float wa-link" href="#contact" aria-label="WhatsApp AC King">✆ WhatsApp</a>
+  <script>
+    // SETUP: Replace the empty value with AC King's WhatsApp number, digits only, including country code.
+    // Example format for Jamaica: 1876XXXXXXX (replace Xs with the real number).
+    const AC_KING_WHATSAPP = "";
+    const DEFAULT_MESSAGE = "Hi AC King, I would like to enquire about your products and services.";
+    function waUrl(message){
+      if(!AC_KING_WHATSAPP || !/^\d{10,15}$/.test(AC_KING_WHATSAPP)) return "#contact";
+      return "https://wa.me/" + AC_KING_WHATSAPP + "?text=" + encodeURIComponent(message || DEFAULT_MESSAGE);
+    }
+    document.querySelectorAll(".wa-link").forEach(link=>{
+      const msg = link.dataset.message || DEFAULT_MESSAGE;
+      link.href = waUrl(msg);
+      link.addEventListener("click", e=>{
+        if(!AC_KING_WHATSAPP || !/^\d{10,15}$/.test(AC_KING_WHATSAPP)){
+          e.preventDefault();
+          document.querySelector("#contact").scrollIntoView({behavior:"smooth"});
+          alert("Add AC King's WhatsApp number in the website file to activate WhatsApp enquiries.");
+        }
+      });
+    });
+    const toggle=document.getElementById("menuToggle");
+    const nav=document.getElementById("nav");
+    toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));toggle.textContent=open?"×":"☰";});
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.textContent="☰";}));
+    document.getElementById("year").textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
